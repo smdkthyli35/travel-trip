@@ -1,0 +1,19 @@
+﻿@using MvcTravelProje.Models.Siniflar
+@model List<AdresBlog> 
+
+<div class="contact-bottom">
+    <div class="contact-left">
+        <div class="contact-add">
+            @foreach(var x in Model) {
+            <h3 style="margin-bottom:10px">Adres Bilgileri</h3>
+            <h3 style="color:black">@x.Baslik</h3>
+            <h3 style="color:black">@x.Aciklama</h3>
+            <h3 style="color:black">Tel: @x.Telefon</h3>
+            <h3 style="color:black">Açık Adres: @x.AdresAcik</h3>
+            <h3 style="color:black">Mail Adres: @x.Mail</h3>
+            }
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>

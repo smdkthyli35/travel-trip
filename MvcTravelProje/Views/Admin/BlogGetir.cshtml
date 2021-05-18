@@ -1,0 +1,29 @@
+﻿@model MvcTravelProje.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("BlogGüncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ID)
+    <div style="margin-bottom:15px">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Tarih")
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Açıklama")
+        @Html.TextAreaFor(x => x.Aciklama,10,1, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Blog Resim")
+        @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+}

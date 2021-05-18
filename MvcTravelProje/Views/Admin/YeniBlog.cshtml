@@ -1,0 +1,27 @@
+﻿@model MvcTravelProje.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "YeniBlog";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div style="margin-bottom:15px">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(m => m.Baslik, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Tarih")
+        @Html.TextBoxFor(m => m.Tarih, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Açıklama")
+        @Html.TextAreaFor(m => m.Aciklama, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Resim")
+        @Html.TextBoxFor(m => m.BlogImage, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <button class="btn btn-info">Yeni Blog Ekle</button>
+    </div>
+</form>

@@ -1,0 +1,68 @@
+﻿@model MvcTravelProje.Models.Siniflar.BlogYorum
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="~/Dosyalar/web-blog/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Dosyalar/web-blog/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+
+</head>
+<body>
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model.Deger1)
+                {
+                    <div style="margin-bottom:20px" class="single-grid">
+                        <a href="/Blog/BlogDetay/@x.ID" style="font-size:20px; text-decoration:none">@x.Baslik</a>
+                        <img style="margin-top:15px" src="@x.BlogImage" alt="" />
+                        <p>
+                            @*@x.Aciklama*@
+                        <p>@x.Aciklama.Substring(0, x.Aciklama.Substring(0, 150).LastIndexOf(" ")).. </p>
+                        <p><a style="text-decoration:none" href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku</span></a></p>
+                    </div>
+                    <br />
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>Son Yazılmış Bloglar</h3>
+                    @foreach (var x in Model.Deger3)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a></li>
+                        </ul>
+                    }
+                </div>
+                <div class="comments">
+                    <h3>Son Yorumlar</h3>
+                   @Html.Action("SonYorumlar", "Blog")
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!---->
+
+</body>
+</html>
+
+
+
+

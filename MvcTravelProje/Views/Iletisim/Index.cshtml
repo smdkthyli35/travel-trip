@@ -1,0 +1,63 @@
+﻿@model MvcTravelProje.Models.Siniflar.Iletisim
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Mvc Tatil-Seyahat Projesi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Dosyalar/web/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Dosyalar/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+
+    <div class="contact">
+        <div class="wrap">
+            <div class="contact-top">
+                <h3>Bize Yazın</h3>
+                <p>
+                    Bloğumla ilgili öneri, teşekkür vb. talepler İçin
+                    aşağıdaki kanallardan bana ulaşabilirsiniz.
+                </p>
+            </div>
+            <div class="form">
+                @using (Html.BeginForm("Index", "Iletisim", FormMethod.Post))
+                {
+                    <div>
+                        <input type="text" class="textbox" value="Ad:" name="AdSoyad" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Ad - Soyad';}">
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" value="E-mail:" name="Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}">
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" value="Konu:" name="Konu" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Konu';}">
+                    </div>
+                    <div class="form1">
+                        <textarea value="Mesajınız:" name="Mesaj" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mesajınız';}">Mesajınız:</textarea>
+                    </div>
+                    <div>
+                        <button class="read" type="submit">Gönder</button>
+                    </div>
+                }
+            </div>
+
+            <div class="clear"></div>
+            @*@Html.Action("Adres","Iletisim")*@
+            <div class="clear"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+

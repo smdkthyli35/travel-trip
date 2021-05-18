@@ -1,0 +1,21 @@
+﻿@model MvcTravelProje.Models.Siniflar.Admin
+@{
+    ViewBag.Title = "AdminBilgiGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("AdminBilgiGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+    <div style="margin-bottom:15px">
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.Kullanici, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:25px">
+        @Html.Label("Şifre")
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+}

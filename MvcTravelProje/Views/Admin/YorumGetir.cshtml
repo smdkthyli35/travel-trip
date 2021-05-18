@@ -1,0 +1,25 @@
+﻿@model MvcTravelProje.Models.Siniflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ID)
+    <div style="margin-bottom:15px">
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Mail Adresi")
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.Label("Yorum")
+        @Html.TextAreaFor(x => x.Yorum,10,1, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+}

@@ -1,0 +1,21 @@
+﻿@using MvcTravelProje.Models.Siniflar
+@model List<Blog>
+
+    <div class="con-bot">
+        @foreach (var x in Model)
+        {
+            <div class="right">
+                <div class="bot-left">
+                    <img style="width:350px; height:185px" src="@x.BlogImage" alt="" />
+                </div>
+                <div class="left-text">
+                    <h4>@x.Baslik</h4>
+                    <span class="doller">Yazıldığı Tarih: @Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")</span>
+                    @*<p>@x.Aciklama.Substring(0,120)...</p>*@
+                    <p>@x.Aciklama.Substring(0, x.Aciklama.Substring(0, 100).LastIndexOf(" ")).. </p>
+                    <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+                </div>
+            </div>
+        }
+        <div class="clear"></div>
+    </div>

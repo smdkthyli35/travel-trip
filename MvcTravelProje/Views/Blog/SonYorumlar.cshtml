@@ -1,0 +1,9 @@
+﻿@using MvcTravelProje.Models.Siniflar
+@model List<Yorumlar>
+
+<ul>
+    @foreach (var x in Model)
+    {
+    <li><a>@x.KullaniciAdi</a> @x.Yorum</li>
+    }
+</ul>
